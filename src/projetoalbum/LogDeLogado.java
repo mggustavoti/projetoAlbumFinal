@@ -16,11 +16,11 @@ import java.util.logging.Logger;
  */
 public class LogDeLogado {
     
-    public void CriaLogLogado() throws IOException{
+    public void CriaLogLogado(String usuario) throws IOException{
         File diretorioLogado = new File("c:/Diretorio Logado");
         diretorioLogado.mkdir();
         
-        DataAtual data = new DataAtual();
+        DataLog data = new DataLog();
         
         File arquivoLogado = new File("c:/Diretorio Logado/arquivo logado.txt");
         //arquivoLogado.createNewFile();
@@ -28,7 +28,7 @@ public class LogDeLogado {
         FileWriter objEscrita = new FileWriter(arquivoLogado, true);
         BufferedWriter objEscrever = new BufferedWriter(objEscrita);
         
-        objEscrever.write(data.retornaDataAtual());
+        objEscrever.write(data.RetornaDataAtual());
         objEscrever.newLine();
         objEscrever.close();
         objEscrita.close();
@@ -38,18 +38,15 @@ public class LogDeLogado {
         String Linha;
         Linha = objLer.readLine();     
         
-        VerificacaoDados objNomeLogado = null;
-        try {
-            objNomeLogado = new VerificacaoDados();
-        } catch (SQLException ex) {
-            Logger.getLogger(LogDeLogado.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
         
         while(Linha != null){
-           System.out.println(objNomeLogado.nomedologado + " logou no sistema - " + Linha);
-           Linha = objLer.readLine();
-        }      
+            System.out.println(usuario + " logou no sistema - " + Linha);
+            Linha = objLer.readLine();       
+        }
+             
+        
+          
         
     }
    

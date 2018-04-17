@@ -1,11 +1,14 @@
 
 package projetoalbum;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -13,8 +16,7 @@ public class VerificacaoDados {
     
     private Connection conexao;
     ArrayList<Usuario> recebeDados = new ArrayList();
-    String nomedologado;
-     
+         
     public VerificacaoDados() throws SQLException{
         this.conexao = CriarConexao.getConexao();
     }
@@ -48,8 +50,13 @@ public class VerificacaoDados {
                 if ( !((recebeDados.get(i).getNomeusuario()).equals(nome)) || !((recebeDados.get(i).getSenhausuario()).equals(senha) ) ){
                     JOptionPane.showMessageDialog(null, "Usuário e/ou Senha incorretos!");    
                 }else{*/
-                nomedologado = nome;
-                new InterfacePrincipal().setVisible(true);
+                LogDeLogado objLogado = new LogDeLogado();
+                try {
+                    objLogado.CriaLogLogado(nome);
+                } catch (IOException ex) {
+                    Logger.getLogger(VerificacaoDados.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                    new InterfacePrincipal().setVisible(true);
             }
            
         rs.close();

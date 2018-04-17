@@ -131,17 +131,12 @@ public class InterfaceLogin extends javax.swing.JFrame {
         //int chave;
         try {
             VerificacaoDados dadosUser = new VerificacaoDados();
-            dadosUser.VerificarUsuario(jTextField_Usuario.getText(), String.valueOf(jPasswordField_Senha.getPassword()));
             
-            LogDeLogado objlog = new LogDeLogado();
-            objlog.CriaLogLogado();
+            dadosUser.VerificarUsuario(jTextField_Usuario.getText(), String.valueOf(jPasswordField_Senha.getPassword()));
             
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(InterfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        } 
         
             
     }//GEN-LAST:event_btn_LogarActionPerformed

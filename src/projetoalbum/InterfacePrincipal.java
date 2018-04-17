@@ -57,7 +57,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             .addGap(0, 203, Short.MAX_VALUE)
         );
 
-        jMenu_Cadastro.setText("Cadastrro");
+        jMenu_Cadastro.setText("Cadastro");
 
         jMenutem_Usuario.setText("Usuário");
         jMenutem_Usuario.addActionListener(new java.awt.event.ActionListener() {

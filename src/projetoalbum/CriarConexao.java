@@ -18,7 +18,7 @@ public class CriarConexao {
             Logger.getLogger(CriarConexao.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Linha abaixo retornando um objeto Connection
-        //return DriverManager.getConnection("jdbc:mysql://172.16.40.133/projetoalbum", "projeto", "projeto");
-        return DriverManager.getConnection("jdbc:mysql://localhost/projetoalbum", "root", "");
+        return DriverManager.getConnection("jdbc:mysql://172.16.40.133/projetoalbum", "projeto", "projeto");
+        
     }
 }
