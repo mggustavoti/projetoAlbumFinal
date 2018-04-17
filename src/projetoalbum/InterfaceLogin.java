@@ -1,5 +1,6 @@
 package projetoalbum;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -132,10 +133,12 @@ public class InterfaceLogin extends javax.swing.JFrame {
             VerificacaoDados dadosUser = new VerificacaoDados();
             dadosUser.VerificarUsuario(jTextField_Usuario.getText(), String.valueOf(jPasswordField_Senha.getPassword()));
             
-            
-                
+            LogDeLogado objlog = new LogDeLogado();
+            objlog.CriaLogLogado();
             
         } catch (SQLException ex) {
+            Logger.getLogger(InterfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(InterfaceLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         

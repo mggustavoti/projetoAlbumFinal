@@ -13,6 +13,7 @@ public class VerificacaoDados {
     
     private Connection conexao;
     ArrayList<Usuario> recebeDados = new ArrayList();
+    String nomedologado;
      
     public VerificacaoDados() throws SQLException{
         this.conexao = CriarConexao.getConexao();
@@ -47,7 +48,7 @@ public class VerificacaoDados {
                 if ( !((recebeDados.get(i).getNomeusuario()).equals(nome)) || !((recebeDados.get(i).getSenhausuario()).equals(senha) ) ){
                     JOptionPane.showMessageDialog(null, "Usuário e/ou Senha incorretos!");    
                 }else{*/
-                
+                nomedologado = nome;
                 new InterfacePrincipal().setVisible(true);
             }
            
