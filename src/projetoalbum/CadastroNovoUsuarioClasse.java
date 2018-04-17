@@ -1,6 +1,12 @@
 
 package projetoalbum;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -99,6 +105,42 @@ public class CadastroNovoUsuarioClasse {
             Logger.getLogger(CadastroNovoUsuarioClasse.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+     public void logEvento (){
+        File objDiretorio = new File("C:/TesteLog/");
+        objDiretorio.mkdir();
+        
+        
+        try {
+            File objArquivo = new File("C:/TesteLog/arquivocadastro.txt");
+            FileWriter objEscrita = new FileWriter(objArquivo,true);
+            BufferedWriter objEscrever = new BufferedWriter(objEscrita);
+            objEscrever.write("Cadastro Teste");
+            objEscrever.close();
+            objEscrita.close();
+            
+            FileReader objLer = new FileReader(objArquivo);
+            BufferedReader objLerB = new BufferedReader(objLer);
+            String linha;
+            linha = objLerB.readLine();
+            
+            while (linha != null){
+                System.out.println("Conteúdo: " + linha);
+                linha = objLerB.readLine();
+            }
+                
+
+
+        } catch (IOException ex) {
+            Logger.getLogger(CadastroNovoUsuarioClasse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+        
+        
+    }
+    
+    
 
 }
 
