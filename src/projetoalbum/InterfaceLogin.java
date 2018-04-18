@@ -57,8 +57,18 @@ public class InterfaceLogin extends javax.swing.JFrame {
                 jTextField_UsuarioActionPerformed(evt);
             }
         });
+        jTextField_Usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField_UsuarioKeyPressed(evt);
+            }
+        });
 
         btn_Logar.setText("LOGAR");
+        btn_Logar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_LogarMouseEntered(evt);
+            }
+        });
         btn_Logar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_LogarActionPerformed(evt);
@@ -140,6 +150,15 @@ public class InterfaceLogin extends javax.swing.JFrame {
         
             
     }//GEN-LAST:event_btn_LogarActionPerformed
+
+    private void btn_LogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogarMouseEntered
+
+      
+    }//GEN-LAST:event_btn_LogarMouseEntered
+
+    private void jTextField_UsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_UsuarioKeyPressed
+        
+    }//GEN-LAST:event_jTextField_UsuarioKeyPressed
 
     /**
      * @param args the command line arguments
