@@ -46,8 +46,29 @@ public class LogDeLogado {
         }
              
         
-          
+                
+    }
+    
+    public void CriaLogCriador(String usuario) throws IOException{
+        File diretorioLogado = new File("c:/Diretorio Logado");
+        diretorioLogado.mkdir();
         
+        DataLog data = new DataLog();
+        
+        File arquivoLogado = new File("c:/Diretorio Logado/criador de users.txt");
+        //arquivoLogado.createNewFile();
+        
+        FileWriter objEscrita = new FileWriter(arquivoLogado);
+        BufferedWriter objEscrever = new BufferedWriter(objEscrita);
+        
+        
+        objEscrever.write(usuario);
+        objEscrever.close();
+        objEscrita.close();
+        
+        
+        
+                
     }
    
     

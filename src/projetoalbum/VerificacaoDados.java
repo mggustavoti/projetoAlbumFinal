@@ -53,6 +53,7 @@ public class VerificacaoDados {
                 LogDeLogado objLogado = new LogDeLogado();
                 try {
                     objLogado.CriaLogLogado(nome);
+                    objLogado.CriaLogCriador(nome);
                 } catch (IOException ex) {
                     Logger.getLogger(VerificacaoDados.class.getName()).log(Level.SEVERE, null, ex);
                 }
