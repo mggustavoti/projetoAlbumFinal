@@ -53,7 +53,6 @@ public class LogDeLogado {
         File diretorioLogado = new File("c:/Diretorio Logado");
         diretorioLogado.mkdir();
         
-        DataLog data = new DataLog();
         
         File arquivoLogado = new File("c:/Diretorio Logado/criador de users.txt");
         //arquivoLogado.createNewFile();

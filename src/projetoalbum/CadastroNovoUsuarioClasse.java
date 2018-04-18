@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 public class CadastroNovoUsuarioClasse {
 
     private Connection conexao;
+    String nomeuser;
 
     public CadastroNovoUsuarioClasse() {
         try {
@@ -84,7 +85,7 @@ public class CadastroNovoUsuarioClasse {
     public void inserirusuario(String nome, String email, String senhausuario) {
         String sql;
         sql = "Insert into usuario (nomeusuario, email, senhausuario) values ('" + nome + "', '" + email + "', MD5('" + senhausuario + "'))";
-
+        this.nomeuser = nome;
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.execute();
@@ -107,25 +108,21 @@ public class CadastroNovoUsuarioClasse {
     }
     
      public void logEvento (){
-        File objDiretorio = new File("C:/TesteLog/");
-        objDiretorio.mkdir();
+        //File objDiretorio = new File("c:/Diretorio Logado/");
+        //objDiretorio.mkdir();
         
         
         try {
-            File objArquivo = new File("C:/TesteLog/arquivocadastro.txt");
-            FileWriter objEscrita = new FileWriter(objArquivo,true);
-            BufferedWriter objEscrever = new BufferedWriter(objEscrita);
-            objEscrever.write("Cadastro Teste");
-            objEscrever.close();
-            objEscrita.close();
+            //File objArquivo = new File("c:/Diretorio Logado/criador de users.txt");
+            DataLog date = new DataLog();
             
-            FileReader objLer = new FileReader(objArquivo);
+            FileReader objLer = new FileReader("c:/Diretorio Logado/criador de users.txt");
             BufferedReader objLerB = new BufferedReader(objLer);
             String linha;
             linha = objLerB.readLine();
             
             while (linha != null){
-                System.out.println("Conteúdo: " + linha);
+                System.out.println(linha + " criou usuário: " + nomeuser + " " + date.RetornaDataAtual());
                 linha = objLerB.readLine();
             }
                 

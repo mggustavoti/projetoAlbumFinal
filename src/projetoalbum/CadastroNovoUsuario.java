@@ -133,9 +133,11 @@ public class CadastroNovoUsuario extends javax.swing.JFrame {
 
             if (chave == 1 || chave2 == 1){
 
-            }else{  
+            }else{
+                
                 objusuario.inserirusuario(tf_nome_cadastrousuario.getText(), tf_email_cadastrousuario.getText(), String.valueOf(tf_senha.getPassword()));
                 JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso.");
+                objusuario.logEvento();
             }
         }
     }//GEN-LAST:event_jb_ok_cadastrar_cadastrousuarioActionPerformed
